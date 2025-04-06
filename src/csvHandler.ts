@@ -6,7 +6,8 @@ import type { InferenceResult, CsvRow } from './types';
 import { config } from './config';
 import logger from './logger';
 
-const CSV_HEADER: CsvRow = [
+// The header is just an array of strings, not a data row conforming to CsvRow type.
+const CSV_HEADER = [
     'cycle_timestamp_iso', 'model_id', 'provider_name', 'provider_model_id',
     'request_url', 'request_body', 'request_headers_sanitized',
     'request_start_iso', 'response_end_iso', 'duration_ms',
