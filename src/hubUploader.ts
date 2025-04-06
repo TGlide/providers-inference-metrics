@@ -44,7 +44,9 @@ export async function uploadCsvToHub(): Promise<boolean> {
             // Consider adding 'commitAuthor' or 'commitCommitter' if needed
         });
 
-        logger.info({ commitUrl: uploadResult.commitUrl }, `Successfully uploaded CSV to Hugging Face Hub.`);
+        // Access the commit URL correctly, using optional chaining
+        const commitInfo = uploadResult.commit ? { commitOid: uploadResult.commit.oid, commitUrl: uploadResult.commit.url } : {};
+        logger.info({ ...commitInfo }, `Successfully uploaded CSV to Hugging Face Hub.`);
 
         // Clear the buffer ONLY after successful upload (FR4.6)
         await clearCsvBuffer();

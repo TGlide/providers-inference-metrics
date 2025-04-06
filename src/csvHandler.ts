@@ -1,4 +1,4 @@
-import fs from 'fs/promises'; // Use promises for async operations
+import * as fs from 'fs/promises'; // Use promises for async operations
 import path from 'path';
 import { stringify } from 'csv-stringify/sync'; // Using csv-stringify for robust CSV generation
 import { parse } from 'papaparse'; // Using papaparse for reading potentially existing headers
