@@ -1,6 +1,4 @@
-Okay, here is the updated specification incorporating the changes for unit tests, more detailed dataset pushing instructions, token safety measures, and the 5-minute interval.
-
-**Improved Specification: Inference Providers Metrics Tracker (v2)**
+# Inference Providers Metrics Tracker (v2)**
 
 **1. Overview & Goal**
 
@@ -234,5 +232,3 @@ cycle_timestamp_iso,model_id,provider_name,provider_model_id,request_url,request
         *   Test converting the internal data structure (holding all info from FR3.1.7) into the flat structure required for a CSV row, ensuring correct order and types (especially timestamps). Ensure headers are sanitized via `sanitizeHeaders` during this process.
     *   **`calculateDuration(startTime: number, endTime: number): number`**:
         *   Test with typical timestamps. Should return the correct difference in milliseconds.
-
-This updated specification provides a comprehensive guide for building the Inference Providers Metrics Tracker, incorporating the requested refinements and best practices. Remember to start by writing the failing unit tests for the components listed in Section 11 before implementing the logic itself.

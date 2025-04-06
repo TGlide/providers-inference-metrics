@@ -8,5 +8,13 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@huggingface/hub": "^1.1.2",
+    "csv-stringify": "^6.5.2",
+    "dotenv": "^16.4.7",
+    "papaparse": "^5.5.2",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0"
   }
 }
