@@ -86,19 +86,21 @@ export function constructApiUrl(providerName: string): string | null {
  * FR3.1.3 (Modified for randomization)
  */
 function buildRequestBody(providerModelId: string): Record<string, any> {
-    // Generate random numbers and operators for the prompt
-    const num1 = Math.floor(Math.random() * 100) + 1; // 1-100
-    const num2 = Math.floor(Math.random() * 100) + 1; // 1-100
-    const num3 = Math.floor(Math.random() * 50) + 1;  // 1-50
+    // Generate random numbers (integers) and operators for the prompt
+    const num1 = Math.floor(Math.random() * 200) + 1; // 1-200
+    const num2 = Math.floor(Math.random() * 200) + 1; // 1-200
+    const num3 = Math.floor(Math.random() * 100) + 1;  // 1-100
     const operators = ['+', '-', '*', '/'];
     const op1 = operators[Math.floor(Math.random() * operators.length)];
     const op2 = operators[Math.floor(Math.random() * operators.length)];
 
-    // Ensure division by zero doesn't happen in the prompt itself (though LLM should handle it)
+    // Ensure division by zero doesn't happen in the prompt itself (LLM should handle it, but good practice)
     const safeNum2 = (op1 === '/' && num2 === 0) ? 1 : num2;
     const safeNum3 = (op2 === '/' && num3 === 0) ? 1 : num3;
 
+    // Construct the prompt string
     const randomPrompt = `Solve this arithmetic problem: ${num1} ${op1} ${safeNum2} ${op2} ${safeNum3}`;
+    logger.debug({ prompt: randomPrompt }, "Generated random prompt for inference call");
 
     return {
         messages: [

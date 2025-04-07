@@ -63,7 +63,7 @@ Configuration is managed via environment variables loaded from the `.env` file. 
     *   `PUSH_INTERVAL_CYCLES`: How many cycles to wait before pushing the local buffer to the Hub (default: `6`).
 *   **Model & Inference:**
     *   `MODELS_TO_FETCH`: Number of top models to test per cycle (default: `5`).
-    *   `MAX_TOKENS_DEFAULT`: Default `max_tokens` for inference requests (default: `512`).
+    *   `MAX_TOKENS_DEFAULT`: Default `max_tokens` for inference requests (default: `4096`).
     *   `PROVIDER_ENDPOINT_MAPPING_PATH`: Path to the JSON file mapping provider names to API URLs (default: `./provider_mapping.json`). You may need to update this file if new providers are added or URLs change.
 *   **Local Storage:**
     *   `LOCAL_CSV_PATH`: Path for the temporary CSV buffer file (default: `./metrics_buffer.csv`).
