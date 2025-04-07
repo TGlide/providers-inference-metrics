@@ -164,7 +164,7 @@ cycle_timestamp_iso,model_id,provider_name,provider_model_id,request_url,request
 
 **7. Deployment & Operations**
 
-*   The application should run as a long-running background process (e.g., using `nohup`, `pm2`, systemd, Docker).
+*   The application should run as a long-running background process (e.g., using `nohup`, `pm2`, systemd, or within a `screen`/`tmux` session).
 *   Ensure required environment variables are set in the execution environment.
 *   Monitor logs for errors and successful execution cycles.
 

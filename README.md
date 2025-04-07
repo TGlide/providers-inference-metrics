@@ -3,6 +3,7 @@ title: Inference Providers Metrics Tracker
 emoji: 👁️‍🗨️ # Changed emoji slightly
 colorFrom: indigo
 colorTo: blue # Changed color slightly
+# sdk: docker # Removed Docker SDK reference
 pinned: false
 ---
 
