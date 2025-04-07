@@ -1,0 +1,37 @@
+# Git files
+.git
+.gitignore
+
+# Node modules (reinstalled inside the container)
+node_modules
+
+# Environment files (should be injected at runtime)
+.env
+.env.*
+*.env
+
+# Local data buffer (generated at runtime)
+metrics_buffer.csv
+*.csv
+
+# Logs
+logs
+*.log
+
+# OS-specific files
+.DS_Store
+
+# Editor/IDE files
+.idea
+.vscode
+
+# Build artifacts (if any)
+dist
+out
+
+# Test coverage
+coverage
+*.lcov
+
+# Aider specific files
+.aider*
