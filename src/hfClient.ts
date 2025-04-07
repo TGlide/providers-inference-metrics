@@ -82,18 +82,32 @@ export function constructApiUrl(providerName: string): string | null {
 
 
 /**
- * Builds the standard request body for inference.
- * FR3.1.3
+ * Builds the request body for inference with a randomized arithmetic problem.
+ * FR3.1.3 (Modified for randomization)
  */
 function buildRequestBody(providerModelId: string): Record<string, any> {
+    // Generate random numbers and operators for the prompt
+    const num1 = Math.floor(Math.random() * 100) + 1; // 1-100
+    const num2 = Math.floor(Math.random() * 100) + 1; // 1-100
+    const num3 = Math.floor(Math.random() * 50) + 1;  // 1-50
+    const operators = ['+', '-', '*', '/'];
+    const op1 = operators[Math.floor(Math.random() * operators.length)];
+    const op2 = operators[Math.floor(Math.random() * operators.length)];
+
+    // Ensure division by zero doesn't happen in the prompt itself (though LLM should handle it)
+    const safeNum2 = (op1 === '/' && num2 === 0) ? 1 : num2;
+    const safeNum3 = (op2 === '/' && num3 === 0) ? 1 : num3;
+
+    const randomPrompt = `Solve this arithmetic problem: ${num1} ${op1} ${safeNum2} ${op2} ${safeNum3}`;
+
     return {
         messages: [
             {
                 role: "user",
-                content: "Solve this: 123/2*3.2*9" // Standardized prompt
+                content: randomPrompt
             }
         ],
-        max_tokens: config.maxTokensDefault,
+        max_tokens: config.maxTokensDefault, // Now defaults to 4096 via config
         model: providerModelId, // Use the specific providerId
         stream: false
     };

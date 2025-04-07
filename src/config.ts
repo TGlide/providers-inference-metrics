@@ -52,7 +52,7 @@ export const config: AppConfig = {
   hfDatasetTargetFilename: getEnvVar('HF_DATASET_TARGET_FILENAME', 'metrics.csv'),
   scheduleIntervalSeconds: getEnvVarAsInt('SCHEDULE_INTERVAL_SECONDS', 1800), // Default to 30 minutes
   modelsToFetch: getEnvVarAsInt('MODELS_TO_FETCH', 5),
-  maxTokensDefault: getEnvVarAsInt('MAX_TOKENS_DEFAULT', 512),
+  maxTokensDefault: getEnvVarAsInt('MAX_TOKENS_DEFAULT', 4096), // Default increased to 4096
   providerEndpointMappingPath: providerMappingPath,
   localCsvPath: getEnvVar('LOCAL_CSV_PATH', './metrics_buffer.csv'),
   pushIntervalCycles: getEnvVarAsInt('PUSH_INTERVAL_CYCLES', 6),
