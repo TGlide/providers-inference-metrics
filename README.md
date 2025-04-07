@@ -3,7 +3,7 @@ title: Inference Metrics Server
 emoji: 👁
 colorFrom: indigo
 colorTo: indigo
-sdk: docker
+# sdk: docker # Removed Docker SDK reference
 pinned: false
 ---
 
