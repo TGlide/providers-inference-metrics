@@ -1,12 +1,3 @@
----
-title: Inference Providers Metrics Tracker
-emoji: 👁️‍🗨️ # Changed emoji slightly
-colorFrom: indigo
-colorTo: blue # Changed color slightly
-# sdk: docker # Removed Docker SDK reference
-pinned: false
----
-
 # Inference Providers Metrics Tracker
 
 This application continuously monitors the availability, performance (latency), and response details of various Hugging Face Inference API providers for popular text-generation models. It runs scheduled checks, performs inference calls, and uploads the collected metrics to a designated Hugging Face Dataset repository.
