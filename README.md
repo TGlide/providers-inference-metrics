@@ -1,3 +1,12 @@
+---
+title: Inference Metrics Server
+emoji: 👁
+colorFrom: indigo
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # providers-inference-metrics
 
 To install dependencies:
