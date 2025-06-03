@@ -3,5 +3,9 @@
   "sambanova": "https://router.huggingface.co/sambanova/v1/chat/completions",
   "fireworks-ai": "https://router.huggingface.co/fireworks-ai/v1/chat/completions",
   "together": "https://router.huggingface.co/together/v1/chat/completions",
-  "hf-inference": "https://router.huggingface.co/hf-inference/v1/chat/completions"
+  "hf-inference": "https://router.huggingface.co/hf-inference/v1/chat/completions",
+  "nebius": "https://router.huggingface.co/nebius/v1/chat/completions",
+  "hyperbolic": "https://router.huggingface.co/hyperbolic/v1/chat/completions",
+  "cerebras": "https://router.huggingface.co/cerebras/v1/chat/completions",
+  "nscale": "https://router.huggingface.co/nscale/v1/chat/completions"
 }
