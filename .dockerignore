@@ -1,0 +1,83 @@
+# Docker ignore file for providers-inference-metrics
+# Based on Node.js best practices and project-specific needs
+
+# Git
+.git/
+.gitignore
+
+# Node modules (will be installed in container)
+node_modules/
+
+# Environment files (should be provided via secrets/env vars)
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+logs/
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Build directories
+build/
+dist/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local CSV buffer (will be created in container)
+metrics_buffer.csv
+data/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Documentation that doesn't need to be in container
+README.md
+spec.md
+
+# Docker files (don't include in the build context)
+Dockerfile*
+docker-compose*.yml
+.dockerignore

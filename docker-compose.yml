@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  inference-metrics:
+    build: .
+    container_name: inference-metrics-tracker
+    restart: unless-stopped
+    
+    # Environment variables - you can override these
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+      # Override LOCAL_CSV_PATH to use volume mount
+      - LOCAL_CSV_PATH=/app/data/metrics_buffer.csv
+      
+    # Load environment from file (create from .env.example)
+    env_file:
+      - .env.docker  # Create this file with your actual secrets
+    
+    # Mount volume for persistent data
+    volumes:
+      - inference_data:/app/data
+      
+    # Health check (optional - checks if process is running)
+    healthcheck:
+      test: ["CMD", "pgrep", "-f", "bun"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Resource limits (adjust as needed)
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+    
+    # Network settings (if needed)
+    networks:
+      - inference-network
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  inference_data:
+    driver: local
+
+networks:
+  inference-network:
+    driver: bridge

@@ -21,9 +21,13 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .env.test.local
 .env.production.local
 .env.local
+# Docker environment file (contains secrets)
+.env.docker
 
 # Local data buffer (should not be committed)
 metrics_buffer.csv
+# Docker data directory 
+data/
 
 # caches
 .eslintcache
