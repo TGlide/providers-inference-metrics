@@ -137,6 +137,7 @@ export async function performInferenceCall(
 	const requestHeaders: Record<string, string> = {
 		'Authorization': `Bearer ${config.hfToken}`,
 		'Content-Type': 'application/json',
+		'X-HF-Bill-To': 'huggingface'
 	};
 	const sanitizedRequestHeaders = sanitizeHeaders(requestHeaders);
 

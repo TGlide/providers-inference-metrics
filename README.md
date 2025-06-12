@@ -64,7 +64,26 @@ Configuration is managed via environment variables loaded from the `.env` file. 
 
 ## Running the Application
 
-Start the monitoring process using:
+### Option 1: Docker (Recommended)
+
+The easiest way to run the application is using Docker:
+
+```bash
+# Copy Docker environment template
+cp .env.docker.example .env.docker
+
+# Edit .env.docker with your actual HF tokens and configuration
+# Then build and run
+./docker-build.sh
+```
+
+Choose option 1 for docker-compose, which provides automatic restarts, health monitoring, and persistent data storage.
+
+See [DOCKER.md](./DOCKER.md) for detailed Docker setup and configuration instructions.
+
+### Option 2: Direct Execution
+
+Start the monitoring process using Bun directly:
 
 ```bash
 bun run index.ts
